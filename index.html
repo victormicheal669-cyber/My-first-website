@@ -1,11 +1,333 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My First Website</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Golden Key Apartment - Find your perfect apartment.">
+  <title>Golden Key Apartment</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f7f7f7;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #111;
+      color: white;
+      padding: 18px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    .logo span {
+      color: #d4af37;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 14px;
+    }
+
+    .hero {
+      min-height: 75vh;
+      display: flex;
+      align-items: center;
+      padding: 60px 7%;
+      background: linear-gradient(135deg, #111, #292929);
+      color: white;
+    }
+
+    .hero-content {
+      max-width: 700px;
+    }
+
+    .hero h1 {
+      font-size: clamp(40px, 8vw, 72px);
+      line-height: 1.05;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 span {
+      color: #d4af37;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: #ddd;
+      margin-bottom: 30px;
+    }
+
+    .button {
+      display: inline-block;
+      background: #d4af37;
+      color: #111;
+      padding: 14px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-right: 10px;
+    }
+
+    .button.secondary {
+      background: transparent;
+      color: white;
+      border: 1px solid #777;
+    }
+
+    section {
+      padding: 65px 7%;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .section-title h2 {
+      font-size: 34px;
+      margin-bottom: 8px;
+    }
+
+    .section-title p {
+      color: #666;
+    }
+
+    .apartments {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    }
+
+    .apartment-image {
+      height: 210px;
+      background: linear-gradient(135deg, #d4af37, #222);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .card-content {
+      padding: 22px;
+    }
+
+    .card-content h3 {
+      margin-bottom: 8px;
+    }
+
+    .card-content p {
+      color: #666;
+      margin-bottom: 15px;
+    }
+
+    .price {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 18px;
+    }
+
+    .features {
+      background: #111;
+      color: white;
+      text-align: center;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 25px;
+    }
+
+    .feature {
+      padding: 20px;
+    }
+
+    .feature h3 {
+      color: #d4af37;
+      margin-bottom: 8px;
+    }
+
+    .contact {
+      background: white;
+      text-align: center;
+    }
+
+    footer {
+      background: #111;
+      color: #aaa;
+      text-align: center;
+      padding: 25px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        padding: 15px 5%;
+      }
+
+      nav a {
+        margin-left: 8px;
+        font-size: 12px;
+      }
+
+      .hero {
+        padding: 50px 6%;
+      }
+
+      section {
+        padding: 50px 6%;
+      }
+
+      .button {
+        display: block;
+        text-align: center;
+        margin: 10px 0;
+      }
+    }
+  </style>
 </head>
+
 <body>
-    <h1>Hello, world!</h1>
-    <p>This is my first website.</p>
-    <button>Click Me</button>
+
+  <header>
+    <div class="logo">Golden <span>Key</span></div>
+
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#apartments">Apartments</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <h1>Find Your <span>Perfect</span> Home</h1>
+
+        <p>
+          Welcome to Golden Key Apartment. Discover comfortable,
+          beautiful and affordable apartments for your next stay.
+        </p>
+
+        <a class="button" href="#apartments">View Apartments</a>
+        <a class="button secondary" href="#contact">Contact Us</a>
+      </div>
+    </section>
+
+    <section id="apartments">
+      <div class="section-title">
+        <h2>Our Apartments</h2>
+        <p>Choose a home that fits your needs.</p>
+      </div>
+
+      <div class="apartments">
+
+        <div class="card">
+          <div class="apartment-image">Apartment 01</div>
+          <div class="card-content">
+            <h3>Luxury 1 Bedroom</h3>
+            <p>Comfortable space for individuals or couples.</p>
+            <div class="price">₦120,000 / month</div>
+            <a class="button" href="#contact">Book Now</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="apartment-image">Apartment 02</div>
+          <div class="card-content">
+            <h3>Premium 2 Bedroom</h3>
+            <p>Spacious apartment designed for comfortable living.</p>
+            <div class="price">₦200,000 / month</div>
+            <a class="button" href="#contact">Book Now</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="apartment-image">Apartment 03</div>
+          <div class="card-content">
+            <h3>Executive 3 Bedroom</h3>
+            <p>A larger home for families and extended stays.</p>
+            <div class="price">₦300,000 / month</div>
+            <a class="button" href="#contact">Book Now</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="section-title">
+        <h2>Why Choose Golden Key?</h2>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature">
+          <h3>Comfort</h3>
+          <p>Homes designed for comfortable living.</p>
+        </div>
+
+        <div class="feature">
+          <h3>Security</h3>
+          <p>Your safety and privacy matter to us.</p>
+        </div>
+
+        <div class="feature">
+          <h3>Easy Booking</h3>
+          <p>Contact us quickly to reserve an apartment.</p>
+        </div>
+
+        <div class="feature">
+          <h3>Trusted Service</h3>
+          <p>Professional service from booking to move-in.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="section-title">
+        <h2>Ready to Find Your Home?</h2>
+        <p>Contact Golden Key Apartment to check availability.</p>
+      </div>
+
+      <a class="button" href="mailto:your@email.com">Email Us</a>
+      <a class="button" href="tel:+2340000000000">Call Us</a>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Golden Key Apartment. All rights reserved.</p>
+  </footer>
+
 </body>
 </html>
